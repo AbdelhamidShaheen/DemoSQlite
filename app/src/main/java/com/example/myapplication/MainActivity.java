@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //intiaLize RoomDatabase
         service = Executors.newFixedThreadPool(3);
-//Threadbool
+//intiaLize Threadbool
         roomdatabase = Room.databaseBuilder(getApplicationContext(), roomdatabase.class, "students").build();
         dao = roomdatabase.Getdao();
 
