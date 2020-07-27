@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //intiaLize RoomDatabase
         service = Executors.newFixedThreadPool(3);
-
+//Threadbool
         roomdatabase = Room.databaseBuilder(getApplicationContext(), roomdatabase.class, "students").build();
         dao = roomdatabase.Getdao();
 
@@ -95,7 +95,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 service.submit(new Runnable() {
                     @Override
+
                     public void run() {
+
                         dao.insert(new Estudent(textUser.getText().toString(), textAGE.getText().toString()));
                         Toast.makeText(getApplicationContext(), "done", Toast.LENGTH_LONG).show();
                     }
