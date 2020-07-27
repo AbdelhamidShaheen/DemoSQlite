@@ -62,11 +62,11 @@ public class HelperClass extends SQLiteOpenHelper {
             SQLiteDatabase database = helperClass.getReadableDatabase();
 
             Cursor cursor = database.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-            String Reuslt = "\n";
+            String Reuslt = "";
 
 
             while (cursor.moveToNext()) {
-                Reuslt = Reuslt + cursor.getString(1) + " " + cursor.getString(2);
+                Reuslt = Reuslt + cursor.getString(1) + " " + cursor.getString(2) + "\n";
 
             }
             return Reuslt;
@@ -79,6 +79,7 @@ public class HelperClass extends SQLiteOpenHelper {
 
         public void CloseDateBase() {
             helperClass.close();
+            this.Print("Closed");
 
         }
     }
